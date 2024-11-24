@@ -8,12 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    private lazy var scrollView: UIScrollView = {
+        let view = UIScrollView(frame: view.frame)
+        view.contentSize = .init(width: view.frame.width, height: view.frame.height * 3)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemBackground
+        view.addSubview(scrollView)
+        title = "Avatar"
     }
-
-
 }
 
